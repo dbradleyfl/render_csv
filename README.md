@@ -1,3 +1,8 @@
+## dbradleyfl fork
+- Adds exact option detailed below
+
+
+
 # render_csv
 
 [![Build Status](https://travis-ci.org/beerlington/render_csv.png?branch=master)](https://travis-ci.org/beerlington/render_csv)
@@ -90,6 +95,14 @@ end
 ```ruby
 respond_to do |format|
   format.csv  { render csv: @locations, except: [:id], add_methods: [:method1, :method2] }
+end
+```
+
+### Specify the exact columns and order of the columns
+
+```ruby
+respond_to do |format|
+  format.csv  { render csv: @locations, exact: [:id, :method2, :method1] }
 end
 ```
 
